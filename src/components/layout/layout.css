@@ -1,0 +1,41 @@
+body {
+    height:100%;
+    width: 100%;
+    background-image: url("../../assets/images/cosmos-dark-evening-1154610.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center;
+    min-width: 360px;
+}
+h1 {
+    color: white;   
+    font-family: 'Press Start 2P', cursive;
+}
+h2 {
+    color: white;    
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (orientation: portrait) {
+    body {  
+        background-position-y: 30%;
+    }
+    h1{
+        font-size: 9vw;        
+    }
+    h2 {
+        font-size: 7vw;
+    }
+}
+@media (orientation: landscape){
+    body {  
+        background-position-y: 65%;
+    }
+    h1{
+        font-size: 4vw;        
+    }
+    h2 {
+        font-size: 3vw;
+    }
+}
