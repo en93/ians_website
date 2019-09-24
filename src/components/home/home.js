@@ -1,19 +1,9 @@
 import React from "react";
+import Logo from '../logo/logo';
 import "./home.css";
 
-const home = () => {
-  const firstName = "Ian";
-  const lastName = " Babington";
-  const subtitle = "Full Stack Developer";
-
-  return (
-    <div className="homeDisplay">
-      <h1>
-        {firstName}<br/>{lastName}
-      </h1>
-      <h2>{subtitle}</h2>
-    </div>
-  );
-};
+const home = () => (
+    <Logo case="homeMainDisplay"/>
+);
 
 export default home;
