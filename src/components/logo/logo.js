@@ -3,7 +3,7 @@ import './logo.css';
 
 const firstName = "Ian";
 const lastName = " Babington";
-const subtitle = "Full Stack Developer";
+const subtitle = "Full Stack Software Developer";
 
 const logo = props => {
     return (
