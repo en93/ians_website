@@ -1,16 +1,13 @@
 import './layout.css';
 import React from "react";
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
+import Navbar from '../navigation/navbar/navbar';
 
 //todo find way to remove wrapping div
 const layout = props => { 
     return (
         <div>
-            {props.children}
-            {/*<BottomNavigation>
-            <!--<BottomNavigationAction label='home' icon={<FavoriteIcon />}/> -->
-            </BottomNavigation>*/}
+            {props.children}            
+            <Navbar/>
         </div>
     );
 } 
