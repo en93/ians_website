@@ -5,6 +5,7 @@ import Home from './components/pages/home/home';
 import ComingSoon from './components/pages/comingSoon/comingSoon';
 import AboutMe from './components/pages/aboutMe/aboutMe';
 import PageNotFound from './components/pages/pageNotFound/pageNotFound';
+import Contact from './components/pages/contact/contact';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path={["/", "/home"]} exact component={Home} />
         <Route path={"/about"} exact component={AboutMe} />
         <Route path={"/projects"} exact component={ComingSoon} />
-        <Route path={"/contact"} exact component={ComingSoon} />
+        <Route path={"/contact"} exact component={Contact} />
         <Route component={PageNotFound}/>
       </Switch>
       </Layout>
