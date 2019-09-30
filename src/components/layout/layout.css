@@ -17,6 +17,12 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
+p {
+    color: white;    
+    font-family: 'Roboto', sans-serif;
+    margin: 5% 10%;
+}
+
 @media (orientation: portrait) {
     body {  
         background-position-y: 30%;

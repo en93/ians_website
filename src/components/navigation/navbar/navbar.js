@@ -4,12 +4,15 @@ import {AboutIcon, HomeIcon, ProjectsIcon, ContactIcon} from '../../icons/icons'
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
-//todo consider using approach as in here: http://react-material.fusetheme.com/documentation/material-ui-components/bottom-navigation
 const navbar = () => {
     const showLabels = true;
+    const navigate = (event, newValue) => {
+
+    };
+
     return (
         <div className="navbar">
-            <BottomNavigation showLabels={showLabels}>
+            <BottomNavigation onChange={navigate} showLabels={showLabels}>
                 <BottomNavigationAction component={Link} to="/" label='Home' icon={<HomeIcon/>}/>
                 <BottomNavigationAction component={Link} to="/about" label='About me' icon={<AboutIcon/>}/>
                 <BottomNavigationAction component={Link} to="/projects" label='Projects' icon={<ProjectsIcon/>}/>
