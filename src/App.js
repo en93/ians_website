@@ -12,13 +12,13 @@ function App() {
   return (
     <div className="App">
       <Layout>
-      <Switch>
-        <Route path={["/", "/home"]} exact component={Home} />
-        <Route path={"/about"} exact component={AboutMe} />
-        <Route path={"/projects"} exact component={ComingSoon} />
-        <Route path={"/contact"} exact component={Contact} />
-        <Route component={PageNotFound}/>
-      </Switch>
+        <Switch>
+          <Route path={["/", "/home"]} exact component={Home} />
+          <Route path={"/about"} exact component={AboutMe} />
+          <Route path={"/projects"} exact component={ComingSoon} />
+          <Route path={"/contact"} exact component={Contact} />
+          <Route component={PageNotFound}/>
+        </Switch>
       </Layout>
     </div> 
   );

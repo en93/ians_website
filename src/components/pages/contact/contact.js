@@ -1,20 +1,19 @@
 import React from "react";
 
+const contact = "Contact";
 const email = "IanBabington93@gmail.com";
-const linkedin = "linkedin.com/in/ian-babington/";
-const github = "github.com/en93";
+const linkedin = "Linkedin.com/in/Ian-Babington/";
+const github = "Github.com/En93";
 
-const contact = () => {
+const display = () => {
     return(
-        <div><p>
-                {email}
-                <br/>
-                {linkedin}
-                <br/>
-                {github}
-            </p>
+        <div>
+            <h1>{contact}</h1>
+            <p>{email}</p>
+            <p>{linkedin}</p>
+            <p>{github}</p>
         </div>
     )
 };
 
-export default contact;
+export default display;

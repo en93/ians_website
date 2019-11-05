@@ -3,7 +3,7 @@ import './comingSoon.css'
 
 const comingSoon = () => {
     return (
-        <h2 className="comingSoon">This page is coming soon!</h2>
+        <h1 className="comingSoon">Coming soon!</h1>
     );
 }
 
