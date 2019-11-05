@@ -6,7 +6,7 @@ import ComingSoon from './components/pages/comingSoon/comingSoon';
 import AboutMe from './components/pages/aboutMe/aboutMe';
 import PageNotFound from './components/pages/pageNotFound/pageNotFound';
 import Contact from './components/pages/contact/contact';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'; 
 
 function App() {
   return (
