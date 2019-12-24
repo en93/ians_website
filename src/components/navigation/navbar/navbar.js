@@ -1,27 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import {AboutIcon, HomeIcon, ProjectsIcon, ContactIcon} from '../../icons/icons';
 import { withRouter } from 'react-router';
-
-
 import './navbar.css';
+import PersonIcon from '@material-ui/icons/Person';
+import CodeIcon from '@material-ui/icons/Code';
+import EmailIcon from '@material-ui/icons/Email';
+import HomeIcon from '@material-ui/icons/Home';
 
-const navbar = props => {
+function Navbar(props) {
+    const [value, setValue] = useState(props.location.pathname);
     const showLabels = true;
+    
     const navigate = (_, newValue) => {
+        setValue(newValue)
         props.history.push(newValue);
     };
-
+    
     return (
         <div className="navbar">
-            <BottomNavigation onChange={navigate} showLabels={showLabels}>
-                <BottomNavigationAction value="home" label='Home' icon={<HomeIcon/>}/>
-                <BottomNavigationAction value="about" label='About me' icon={<AboutIcon/>}/>
-                <BottomNavigationAction value="projects" label='Projects' icon={<ProjectsIcon/>}/>
-                <BottomNavigationAction value="contact" label='Contact' icon={<ContactIcon/>}/>
+            <BottomNavigation onChange={navigate} showLabels={showLabels} value={value}>
+                <BottomNavigationAction value="/home" label='Home' icon={<HomeIcon/>}/>
+                <BottomNavigationAction value="/about" label='About me' icon={<PersonIcon/>}/>
+                <BottomNavigationAction value="/projects" label='Projects' icon={<CodeIcon/>}/>
+                <BottomNavigationAction value="/contact" label='Contact' icon={<EmailIcon/>}/>
             </BottomNavigation>
         </div>
     )
 };
 
-export default withRouter(navbar);
+export default withRouter(Navbar);
