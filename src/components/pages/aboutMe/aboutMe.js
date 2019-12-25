@@ -9,14 +9,6 @@ import './aboutMe.css'
 
 const headline = "About me"
 
-// const intro = "As part of Agile teams at the Ministry of Social Development, I've built client facing websites, " 
-//     + "backend Client Management Systems and Deployment Pipelines in support of large Government projects."
-
-// const tech = "This was achieved using tech including Java, Javascipt and Python supported by both relational and NoSQL databases";
-
-// const uni = "Studying Honours Computer Science and Information Systems at the University of Auckland, taught me the technical and business skills "
-//     + "to succeed in modern software development. I also conducted original research into designing digital exercise games";
-
 const BPM_LABEL = 'Developer: BPM Team (MSD)';
 const BPM_DESC = 'Working with the BPM team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
 
@@ -46,11 +38,10 @@ const useStyles = makeStyles(theme => ({
     heading: {
       fontSize: theme.typography.pxToRem(15),
       flexShrink: 0,
-      color: '#000000',
+      color: theme.palette.text.primary,
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(15),
-      color: '#000000',
       color: theme.palette.text.secondary,
     },
     p: {
