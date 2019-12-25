@@ -8,9 +8,12 @@ import EmailIcon from '@material-ui/icons/Email';
 import HomeIcon from '@material-ui/icons/Home';
 
 function Navbar(props) {
-    const [value, setValue] = useState(props.location.pathname);
-    const showLabels = true;
+    const [value, setValue] = useState(
+        //If path is empty set to use home
+        (x => x.location.pathname === '/' ? '/home' : x.location.pathname)(props)         
+    );
     
+    const showLabels = true;    
     const navigate = (_, newValue) => {
         setValue(newValue)
         props.history.push(newValue);

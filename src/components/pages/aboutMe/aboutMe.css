@@ -1,5 +1,9 @@
 .about{
-    position: absolute;
+    position: relative;
     height: calc(100vh - 112px);
     overflow: auto;
+    max-width: 800px;
+    margin-left: auto; 
+    margin-right: auto;    
+    overflow: overlay;
 }
