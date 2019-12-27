@@ -1,0 +1,7 @@
+.contact {
+    margin-left: auto; 
+    margin-right: auto;    
+    overflow: overlay;
+    height: calc(100vh - 112px);
+    position: relative;
+}
