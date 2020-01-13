@@ -9,7 +9,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import ReactGA from 'react-ga';
 
-
+ 
 const contact = "Contact";
 
 const EMAIL_ADDRESS = "IanBabington93@gmail.com";
@@ -86,7 +86,7 @@ function SimpleCard() {
 const display = () => {
     ReactGA.pageview('/contact');
     return( 
-        <div>
+        <div className="Page-content">
             <h1>{contact}</h1>
             {SimpleCard()}
         </div>

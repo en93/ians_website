@@ -60,6 +60,7 @@ p {
     overflow: overlay;
     height: calc(100vh - 112px);
     position: relative;
+    width: 90%
 }
 
 .navbar {

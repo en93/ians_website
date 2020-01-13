@@ -7,120 +7,115 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactGA from 'react-ga';
 
-const headline = "About me"
+const headline = "About me"; 
 
-const BPM_LABEL = 'Developer: BPM Team (MSD)';
+const BPM_LABEL = 'Developer: BPM Team at MSD';
 const BPM_DESC = 'Working with the BPM team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
 
-const JAVA_LABEL = 'Developer: Java Team (MSD)';
+const JAVA_LABEL = 'Developer: Java Team at MSD';
 const JAVA_DESC = 'Working with the Java team I was responsible for development and automation jobs on a large range of Java projects. I also managed deployments to shared Development Environments which involved chairing meetings and coordinating with many teams across IT.';
 
-const MYMSD_LABEL = 'Developer: MyMSD Team (MSD)';
+const MYMSD_LABEL = 'Developer: MyMSD Team at MSD';
 const MYMSD_DESC = 'Working in the Agile MyMSD team, I developed mobile first experiences using the Ember.js and Java Spring frameworks to support the MyMSD online service.';
 
-const CA_LABEL = 'Developer: Client Apps (MSD)';
-const CA_DESC = 'Working in an Agile team, I develop client facing, React Front-ends and Java Back-end Client Management Systems in support of government projects.';
+const CA_LABEL = 'Developer: Client Apps at MSD';
+const CA_DESC = 'Working in an Agile team, I develop client facing, React Front-ends and Java Back-end Client Management Systems in support of large government projects.';
 
-const UNI_HONS_LABEL = 'BSc CS Honours (UoA)';
+const UNI_HONS_LABEL = 'Postgraduate: UoA';
 const UNI_HONS_DESC = 'I studied advanced topics in Software Development, including security and UX, and completed original research in the area of multiplayer, exercise video games.';
 
-const UNI_UNDERGRAD_LABEL = 'BSc CS & IS (UoA)';
-const UNI_UNDERGRAD_DESC = 'I completed a double major BSc, with Information Systems and Computer Science, which gave me the technical and business skills to manage modern Software Development.';
+const UNI_UNDERGRAD_LABEL = 'Undergraduate: UoA';
+const UNI_UNDERGRAD_DESC = 'I completed a double major BSc, with Information Systems and Computer Science, which taught me core technical and business skills.';
+
+const ACCLAIM_LABEL = 'Internship: Acclaim Software';
+const ACCLAIM_DESC = 'I learnt in the real world about the SDLC, clean code and working in a team environment. I added new features to the core product as well as updating the installer.';
+
 
 const useStyles = makeStyles(theme => ({
-    root: {
-      width: '80%',
-      color: '#000000',
-      position: 'relative',
-      marginLeft: 'auto',
-      marginRight: 'auto',   
-    },
     heading: {
-      fontSize: theme.typography.pxToRem(15),
-      flexShrink: 0,
+      fontSize: theme.typography.pxToRem(17),
       color: theme.palette.text.primary,
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(15),
       color: theme.palette.text.secondary,
-    },
-    p: {
-        color: '#000000'
     }
 }));
-
-const about = () => (
-    <div>
-        <h1>{headline}</h1>
-        {Bio()}
-    </div>
-);
-
 
 function Bio()  {
     ReactGA.pageview('/about');
     const [expanded, setExpanded] = useState(false);
-    const handleChange = panel => (event, isExpanded) => {
+    const handleChange = panel => (_, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
     const classes = useStyles();
     
     return (
-        <div className={classes.root}>
-            <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <div>
+            <ExpansionPanel expanded={expanded === 'panelCA'} onChange={handleChange('panelCA')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel1bh-content"
-                        id="panel1bh-header">
+                        aria-controls="panelCAbh-content"
+                        id="panelCAbh-header">
                     <Typography className={classes.heading}>{CA_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className={classes.secondaryHeading}>{CA_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+            <ExpansionPanel expanded={expanded === 'panelMyMSD'} onChange={handleChange('panelMyMSD')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel2bh-content"
-                        id="panel2bh-header">
+                        aria-controls="panelMyMSDbh-content"
+                        id="panelMyMSDbh-header">
                     <Typography className={classes.heading}>{MYMSD_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className={classes.secondaryHeading}>{MYMSD_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+            <ExpansionPanel expanded={expanded === 'panelJava'} onChange={handleChange('panelJava')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel3bh-content"
-                        id="panel3bh-header">
+                        aria-controls="panelJavabh-content"
+                        id="panelJavabh-header">
                     <Typography className={classes.heading}>{JAVA_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className={classes.secondaryHeading}>{JAVA_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+            <ExpansionPanel expanded={expanded === 'panelBPM'} onChange={handleChange('panelBPM')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel4bh-content"
-                        id="panel4bh-header">
+                        aria-controls="panelBPMbh-content"
+                        id="panelBPMbh-header">
                     <Typography className={classes.heading}>{BPM_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className={classes.secondaryHeading}>{BPM_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+            <ExpansionPanel expanded={expanded === 'panelUniHons'} onChange={handleChange('panelUniHons')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel5bh-content"
-                        id="panel5bh-header">
+                        aria-controls="panelUniHonsbh-content"
+                        id="panelUniHonsbh-header">
                     <Typography className={classes.heading}>{UNI_HONS_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className={classes.secondaryHeading}>{UNI_HONS_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+            <ExpansionPanel expanded={expanded === 'panelAcclaim'} onChange={handleChange('panelAcclaim')}>
+            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
+                    aria-controls="panelAcclaimbh-content"
+                    id="panelAcclaimbh-header">
+                <Typography className={classes.heading}>{ACCLAIM_LABEL}</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+                <Typography className={classes.secondaryHeading}>{ACCLAIM_DESC}</Typography>
+            </ExpansionPanelDetails>
+        </ExpansionPanel>
+            <ExpansionPanel expanded={expanded === 'panelUni'} onChange={handleChange('panelUni')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel6bh-content"
-                        id="panel6bh-header">
+                        aria-controls="panelUnibh-content"
+                        id="panelUnibh-header">
                     <Typography className={classes.heading}>{UNI_UNDERGRAD_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -128,7 +123,14 @@ function Bio()  {
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>
-    )
+    );
 }
+
+const about = () => (
+    <div className="Page-content">
+        <h1>{headline}</h1>
+        {Bio()}
+    </div>
+);
 
 export default about;
