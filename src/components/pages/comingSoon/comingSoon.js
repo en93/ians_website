@@ -1,10 +1,9 @@
 import React from "react";
-import './comingSoon.css'
+import ReactGA from 'react-ga';
 
 const comingSoon = () => {
-    return (
-        <h1 className="comingSoon">Coming soon!</h1>
-    );
+    ReactGA.pageview('/projects');
+    return <h1 className="Full-page-message">Coming soon!</h1>;
 }
 
 export default comingSoon;

@@ -7,7 +7,9 @@ import AboutMe from './components/pages/aboutMe/aboutMe';
 import PageNotFound from './components/pages/pageNotFound/pageNotFound';
 import Contact from './components/pages/contact/contact';
 import { Route, Switch } from 'react-router-dom'; 
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-155064574-1');
 function App() {
   return (
     <div className="App">

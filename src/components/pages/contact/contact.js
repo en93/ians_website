@@ -7,7 +7,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import './contact.css';
+import ReactGA from 'react-ga';
 
 
 const contact = "Contact";
@@ -84,8 +84,9 @@ function SimpleCard() {
 }
 
 const display = () => {
+    ReactGA.pageview('/contact');
     return( 
-        <div className="contact">
+        <div>
             <h1>{contact}</h1>
             {SimpleCard()}
         </div>

@@ -5,7 +5,9 @@ import Navbar from '../navigation/navbar/navbar';
 const layout = props => { 
     return (
         <div> 
-            {props.children}      
+            <div className="Page-content">
+                {props.children}      
+            </div>
             <Navbar/>
         </div>
     );

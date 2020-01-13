@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import { withRouter } from 'react-router';
-import './navbar.css';
 import PersonIcon from '@material-ui/icons/Person';
 import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';

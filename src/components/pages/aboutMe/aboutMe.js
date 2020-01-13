@@ -5,7 +5,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import './aboutMe.css'
+import ReactGA from 'react-ga';
 
 const headline = "About me"
 
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const about = () => (
-    <div className="about">
+    <div>
         <h1>{headline}</h1>
         {Bio()}
     </div>
@@ -58,6 +58,7 @@ const about = () => (
 
 
 function Bio()  {
+    ReactGA.pageview('/about');
     const [expanded, setExpanded] = useState(false);
     const handleChange = panel => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
