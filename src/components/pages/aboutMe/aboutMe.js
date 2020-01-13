@@ -9,16 +9,16 @@ import ReactGA from 'react-ga';
 
 const headline = "About me"; 
 
-const BPM_LABEL = 'Developer: BPM Team at MSD';
+const BPM_LABEL = 'Developer: BPM Team (MSD)';
 const BPM_DESC = 'Working with the BPM team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
 
-const JAVA_LABEL = 'Developer: Java Team at MSD';
+const JAVA_LABEL = 'Developer: Java Team (MSD)';
 const JAVA_DESC = 'Working with the Java team I was responsible for development and automation jobs on a large range of Java projects. I also managed deployments to shared Development Environments which involved chairing meetings and coordinating with many teams across IT.';
 
-const MYMSD_LABEL = 'Developer: MyMSD Team at MSD';
+const MYMSD_LABEL = 'Developer: MyMSD Team (MSD)';
 const MYMSD_DESC = 'Working in the Agile MyMSD team, I developed mobile first experiences using the Ember.js and Java Spring frameworks to support the MyMSD online service.';
 
-const CA_LABEL = 'Developer: Client Apps at MSD';
+const CA_LABEL = 'Developer: Client Apps (MSD)';
 const CA_DESC = 'Working in an Agile team, I develop client facing, React Front-ends and Java Back-end Client Management Systems in support of large government projects.';
 
 const UNI_HONS_LABEL = 'Postgraduate: UoA';
