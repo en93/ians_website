@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -7,16 +7,17 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactGA from 'react-ga';
 
-const headline = "About me"; 
+const PAGE_TITLE = "Ian Babington | About me";
+const HEADLINE = "About me"; 
 
 const BPM_LABEL = 'Developer: BPM Team (MSD)';
-const BPM_DESC = 'Working with the BPM team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
+const BPM_DESC = 'Working with the Business Process Management Team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
 
 const JAVA_LABEL = 'Developer: Java Team (MSD)';
-const JAVA_DESC = 'Working with the Java team I was responsible for development and automation jobs on a large range of Java projects. I also managed deployments to shared Development Environments which involved chairing meetings and coordinating with many teams across IT.';
+const JAVA_DESC = 'Working with the Java Team I was responsible for developing and maintaining our Java services and automation jobs on a large range of Government projects. I also managed deployments to shared Development Environments which involved chairing meetings and coordinating with many teams across IT.';
 
 const MYMSD_LABEL = 'Developer: MyMSD Team (MSD)';
-const MYMSD_DESC = 'Working in the Agile MyMSD team, I developed mobile first experiences using the Ember.js and Java Spring frameworks to support the MyMSD online service.';
+const MYMSD_DESC = 'Working in the Agile MyMSD Team, I developed mobile first experiences using the Ember.js and Java Spring frameworks to support the MyMSD online service.';
 
 const CA_LABEL = 'Developer: Client Apps (MSD)';
 const CA_DESC = 'Working in an Agile team, I develop client facing, React Front-ends and Java Back-end Client Management Systems in support of large government projects.';
@@ -33,10 +34,11 @@ const ACCLAIM_DESC = 'I learnt in the real world about the SDLC, clean code and 
 
 const useStyles = makeStyles(theme => ({
     heading: {
-      fontSize: theme.typography.pxToRem(17),
+      fontSize: theme.typography.pxToRem(16),
       color: theme.palette.text.primary,
+      textAlign: "left",
     },
-    secondaryHeading: {
+    paragraph: { 
       fontSize: theme.typography.pxToRem(15),
       color: theme.palette.text.secondary,
     }
@@ -59,7 +61,7 @@ function Bio()  {
                     <Typography className={classes.heading}>{CA_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{CA_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{CA_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelMyMSD'} onChange={handleChange('panelMyMSD')}>
@@ -69,7 +71,7 @@ function Bio()  {
                     <Typography className={classes.heading}>{MYMSD_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{MYMSD_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{MYMSD_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelJava'} onChange={handleChange('panelJava')}>
@@ -79,7 +81,7 @@ function Bio()  {
                     <Typography className={classes.heading}>{JAVA_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{JAVA_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{JAVA_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelBPM'} onChange={handleChange('panelBPM')}>
@@ -89,7 +91,7 @@ function Bio()  {
                     <Typography className={classes.heading}>{BPM_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{BPM_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{BPM_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelUniHons'} onChange={handleChange('panelUniHons')}>
@@ -99,7 +101,7 @@ function Bio()  {
                     <Typography className={classes.heading}>{UNI_HONS_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{UNI_HONS_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{UNI_HONS_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelAcclaim'} onChange={handleChange('panelAcclaim')}>
@@ -108,10 +110,10 @@ function Bio()  {
                     id="panelAcclaimbh-header">
                 <Typography className={classes.heading}>{ACCLAIM_LABEL}</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-                <Typography className={classes.secondaryHeading}>{ACCLAIM_DESC}</Typography>
+            <ExpansionPanelDetails>cd 
+                <Typography className={classes.paragraph}>{ACCLAIM_DESC}</Typography>
             </ExpansionPanelDetails>
-        </ExpansionPanel>
+            </ExpansionPanel>
             <ExpansionPanel expanded={expanded === 'panelUni'} onChange={handleChange('panelUni')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panelUnibh-content"
@@ -119,18 +121,23 @@ function Bio()  {
                     <Typography className={classes.heading}>{UNI_UNDERGRAD_LABEL}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Typography className={classes.secondaryHeading}>{UNI_UNDERGRAD_DESC}</Typography>
+                    <Typography className={classes.paragraph}>{UNI_UNDERGRAD_DESC}</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>
     );
 }
 
-const about = () => (
-    <div className="Page-content">
-        <h1>{headline}</h1>
-        {Bio()}
-    </div>
-);
+function About(){
+    useEffect(() => {
+        document.title = PAGE_TITLE;
+    })
+    return (
+        <div className="Page-content">
+            <h1>{HEADLINE}</h1>
+            {Bio()}
+        </div>
+    )
+};
 
-export default about;
+export default About;

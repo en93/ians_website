@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactGA from 'react-ga';
 
-const comingSoon = () => {
+const PAGE_TITLE = 'Ian Babington | Projects';
+
+function ComingSoon() {
+    useEffect(() => {
+        document.title = PAGE_TITLE;
+    });
     ReactGA.pageview('/projects');
     return <h1 className="Full-page-message">Coming soon!</h1>;
 }
 
-export default comingSoon;
+export default ComingSoon;

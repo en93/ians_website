@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,7 +9,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import ReactGA from 'react-ga';
 
- 
+const PAGE_TITLE = "Ian Babington | Contact";
 const contact = "Contact";
 
 const EMAIL_ADDRESS = "IanBabington93@gmail.com";
@@ -40,10 +40,8 @@ const useStyles = makeStyles({
     },
   });
 
-function SimpleCard() {
-    const classes = useStyles();
-    // const bull = <span className={classes.bullet}>•</span>;
-  
+function Cards() {
+    const classes = useStyles();  
     return (
       <div>
 
@@ -83,14 +81,17 @@ function SimpleCard() {
   );
 }
 
-const display = () => {
-    ReactGA.pageview('/contact');
-    return( 
-        <div className="Page-content">
-            <h1>{contact}</h1>
-            {SimpleCard()}
-        </div>
-    )
+function Display() {
+  useEffect(() => {
+    document.title = PAGE_TITLE;  
+  });
+  ReactGA.pageview('/contact');
+  return( 
+      <div className="Page-content">
+          <h1>{contact}</h1>
+          {Cards()}
+      </div>
+  )
 };
 
-export default display;
+export default Display;
