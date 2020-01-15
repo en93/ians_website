@@ -110,7 +110,7 @@ function Bio()  {
                     id="panelAcclaimbh-header">
                 <Typography className={classes.heading}>{ACCLAIM_LABEL}</Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>cd 
+            <ExpansionPanelDetails>
                 <Typography className={classes.paragraph}>{ACCLAIM_DESC}</Typography>
             </ExpansionPanelDetails>
             </ExpansionPanel>
