@@ -11,10 +11,10 @@ import Typography from '@material-ui/core/Typography';
 
 const PAGE_TITLE = 'Ian Babington | Projects';
 const TITLE = 'Projects';
-
 const useStyles = makeStyles({
     card: {
       maxWidth: 325,
+      margin: '15px auto',
     },
     media: {
       height: 120,
@@ -24,38 +24,50 @@ const useStyles = makeStyles({
     },
     content: {
         textAlign: "left",
-    }
+        padding: '12px 16px 0px',
+    },
+    button: {
+        padding: '0px',
+    },
   });
-  
 
-function TestCard() {
+function ProjectCards() {  
     const classes = useStyles();
+    function CardFactory(imagePath, heading, description){ 
+        return (
+            <Card className={classes.card}>
+                <CardActionArea>
+                    <CardMedia 
+                        className={classes.media}
+                        image={ imagePath}
+                        title="React logo"
+                        alt="React logo"                    
+                        />
+                    <CardContent className={classes.content}>
+                        <Typography gutterBottom variant="h5" component="h3" >{heading}</Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {description}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button size="large" color="primary">
+                        Learn More
+                    </Button>
+                </CardActions>
+            </Card>
+        );
+    };
+    
     return (
-        <Card className={classes.card}>
-            <CardActionArea>
-                <CardMedia 
-                    className={classes.media}
-                    image={ require('../../../assets/images/reactLogo.png')}
-                    title="React logo"
-                    alt="React logo"                    
-                    />
-                <CardContent className={classes.content}>
-                    <Typography gutterBottom variant="h5" component="h3" >IanBabington.com</Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        This website is being used to gain experience with building and deploying a React based Responsive website 
-                        as well as to share what I'm working on.
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button>
-            </CardActions>
-        </Card>
-    )
+        <div>
+            {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise Game', 'Research into designing for engagement.')}
+            {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.')}
+            {CardFactory(require('../../../assets/images/pythonLogo.png'), 'Monty Hall Problem', 'Simulating probability.')}
+            {CardFactory(require('../../../assets/images/androidLogo.png'), 'Android NFC Reader', 'Exploring NFC functionality.')} 
+        </div>); 
+};  
 
-}
 
 function Projects() {
     useEffect(() => {
@@ -65,7 +77,7 @@ function Projects() {
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {TestCard()}
+            {ProjectCards()}
         </div>
     );
 }
