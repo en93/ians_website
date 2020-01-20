@@ -51,79 +51,31 @@ function Bio()  {
         setExpanded(isExpanded ? panel : false);
     };
     const classes = useStyles();
+
+    function ExpansionPanelBuilder(label, description, id){
+        return (
+            <ExpansionPanel expanded={expanded === id} onChange={handleChange(id)}>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
+                        aria-controls={ id + "bh-content"}
+                        id={ id +"bh-header"}>
+                    <Typography className={classes.heading}>{label}</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography className={classes.paragraph}>{description}</Typography>
+                </ExpansionPanelDetails>
+        </ExpansionPanel>
+        )
+    }
     
     return (
         <div>
-            <ExpansionPanel expanded={expanded === 'panelCA'} onChange={handleChange('panelCA')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelCAbh-content"
-                        id="panelCAbh-header">
-                    <Typography className={classes.heading}>{CA_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{CA_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelMyMSD'} onChange={handleChange('panelMyMSD')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelMyMSDbh-content"
-                        id="panelMyMSDbh-header">
-                    <Typography className={classes.heading}>{MYMSD_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{MYMSD_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelJava'} onChange={handleChange('panelJava')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelJavabh-content"
-                        id="panelJavabh-header">
-                    <Typography className={classes.heading}>{JAVA_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{JAVA_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelBPM'} onChange={handleChange('panelBPM')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelBPMbh-content"
-                        id="panelBPMbh-header">
-                    <Typography className={classes.heading}>{BPM_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{BPM_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelUniHons'} onChange={handleChange('panelUniHons')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelUniHonsbh-content"
-                        id="panelUniHonsbh-header">
-                    <Typography className={classes.heading}>{UNI_HONS_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{UNI_HONS_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelAcclaim'} onChange={handleChange('panelAcclaim')}>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                    aria-controls="panelAcclaimbh-content"
-                    id="panelAcclaimbh-header">
-                <Typography className={classes.heading}>{ACCLAIM_LABEL}</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-                <Typography className={classes.paragraph}>{ACCLAIM_DESC}</Typography>
-            </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel expanded={expanded === 'panelUni'} onChange={handleChange('panelUni')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panelUnibh-content"
-                        id="panelUnibh-header">
-                    <Typography className={classes.heading}>{UNI_UNDERGRAD_LABEL}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography className={classes.paragraph}>{UNI_UNDERGRAD_DESC}</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
+            {ExpansionPanelBuilder(CA_LABEL, CA_DESC, "panelCA")}
+            {ExpansionPanelBuilder(MYMSD_LABEL, MYMSD_DESC, "panelMyMSD")}
+            {ExpansionPanelBuilder(JAVA_LABEL, JAVA_DESC, "panelJava")}
+            {ExpansionPanelBuilder(BPM_LABEL, BPM_DESC, "panelBPM")}
+            {ExpansionPanelBuilder(UNI_HONS_LABEL, UNI_HONS_DESC, "panelUniHons")}
+            {ExpansionPanelBuilder(ACCLAIM_LABEL, ACCLAIM_DESC, "panelAcclaim")}
+            {ExpansionPanelBuilder(UNI_UNDERGRAD_LABEL, UNI_UNDERGRAD_DESC, "panelUni")}
         </div>
     );
 }
