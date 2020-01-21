@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import ReactGA from 'react-ga';
 import { makeStyles } from '@material-ui/core/styles';
+import { withRouter } from 'react-router';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -14,7 +15,7 @@ const TITLE = 'Projects';
 const useStyles = makeStyles({
     card: {
       maxWidth: 325,
-      margin: '15px auto',
+      margin: '17px auto',
     },
     media: {
       height: 120,
@@ -31,17 +32,19 @@ const useStyles = makeStyles({
     },
   });
 
-function ProjectCards() {  
+
+
+function ProjectCards(navAction) {  
     const classes = useStyles();
-    function CardFactory(imagePath, heading, description){ 
+    function CardFactory(imagePath, heading, description, link){ 
         return (
             <Card className={classes.card}>
-                <CardActionArea>
+                <CardActionArea onClick={ () => navAction(link)}>
                     <CardMedia 
                         className={classes.media}
                         image={ imagePath}
-                        title="React logo"
-                        alt="React logo"                    
+                        title="Logo"
+                        alt="Logo"                    
                         />
                     <CardContent className={classes.content}>
                         <Typography gutterBottom variant="h5" component="h3" >{heading}</Typography>
@@ -51,7 +54,7 @@ function ProjectCards() {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="large" color="primary">
+                    <Button size="large" color="primary" onClick={ () => navAction(link)}>
                         Learn More
                     </Button>
                 </CardActions>
@@ -61,25 +64,28 @@ function ProjectCards() {
     
     return (
         <div>
-            {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise Game', 'Research into designing for engagement.')}
-            {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.')}
-            {CardFactory(require('../../../assets/images/pythonLogo.png'), 'Monty Hall Problem', 'Simulating probability.')}
-            {CardFactory(require('../../../assets/images/androidLogo.png'), 'Android NFC Reader', 'Exploring NFC functionality.')} 
+            {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise', 'Creating engagement with exercise games.', './projects/exercise-game')}
+            {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.', './home')}
+            {CardFactory(require('../../../assets/images/pythonLogo.png'), 'Monty Hall Problem', 'Simulating probability.', './home')}
+            {CardFactory(require('../../../assets/images/androidLogo.png'), 'Android NFC Reader', 'Exploring NFC functionality.', './home')} 
         </div>); 
 };  
 
 
-function Projects() {
+function Projects(props) {
     useEffect(() => {
         document.title = PAGE_TITLE;  
       });
-    ReactGA.pageview('/pageNotFound');
+    ReactGA.pageview('/projects');
+    const navAction = (linkAddress) =>{
+        props.history.push(linkAddress);
+    };
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {ProjectCards()}
+            {ProjectCards(navAction)}
         </div>
     );
 }
 
-export default Projects;
+export default withRouter(Projects);
