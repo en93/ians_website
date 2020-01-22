@@ -11,11 +11,11 @@ const PAGE_TITLE = 'Ian Babington | Mulitplayer Exercise';
 const TITLE = 'Projects';
 
 const BACKGROUND_HEADER = "Background";
-const BACKGROUND_CONTENT = "For my Honours Dissertation at the University of Auckland, I researched how games can " +
-    "help people stay fit. My aim was to explore how we can design exercise based gameplay to keep people engaged. I expanded on previous " +
-    "work done in the area and proposed new ways of creating close, exciting results to keep people playing " +
-    "and exercising. I looked into how we can balance mulitplayer gameplay in terms of fitness, skill and cognitive load without alerting the player " +
-    "as to avoid feelings of unfair or unearned results.";
+const BACKGROUND_CONTENT = "For my Honours Dissertation, at the University of Auckland, I researched how games can " +
+    "help people stay fit. My aim was to explore how we can design exercise based gameplay to keep people engaged. After completing a " +
+    "literature review, I proposed new ways of creating close, exciting results to keep people playing and exercising. " +
+    "I proposed and tested three ways we can balance mulitplayer gameplay in terms of fitness, skill and cognitive load without " +
+    "alerting the player as to avoid feelings of unfair or unearned results.";
 
 const TECH_HEADING = "Technology";
 const TECH_CONTENT = "To build the game I started with an exisitng codebase built for singleplayer and added " +
