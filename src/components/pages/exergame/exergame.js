@@ -11,20 +11,24 @@ const PAGE_TITLE = 'Ian Babington | Mulitplayer Exercise';
 const TITLE = 'Projects';
 
 const BACKGROUND_HEADER = "Background";
-const BACKGROUND_CONTENT = "For my Honours Dissertation, at the University of Auckland, I researched how games can " +
-    "help people stay fit. My aim was to explore how we can design exercise based gameplay to keep people engaged. After completing a " +
-    "literature review, I proposed new ways of creating close, exciting results to keep people playing and exercising. " +
-    "I proposed and tested three ways we can balance mulitplayer gameplay in terms of fitness, skill and cognitive load without " +
-    "alerting the player as to avoid feelings of unfair or unearned results.";
+const BACKGROUND_CONTENT = "For my Honours Dissertation, I researched exercise games and creating competitive multiplayer experiences. I considered people’s different levels of fitness, skill and cognitive ability and proposed systems to create close matches to motivate further exercise."; 
 
-const TECH_HEADING = "Technology";
-const TECH_CONTENT = "To build the game I started with an exisitng codebase built for singleplayer and added " +
-    "new functionality using the Unity Game Enginge and the C# Scripting API. To enable mulitplayer, I updated how the game world is " +
-    "generated as so that objects will be synced across networked clients and managed messaging around scores and endgame " +
-    "conditions. I also added scripts to manage new game modes for balancing for fitness, skill and congnitive load.";
+const RESEARCH_HEADING = "Research";
+const RESEARCH_CONTENT = "I implemented multiplayer features and additional game modes for a prototype exercycle racing game. This utilized the Unity game engine and its C# Scripting API. With this game I carried out user testing.";
+
+const FITNESS_HEADING = "Fitness Balancing";
+const FITNESS_CONTENT = "Using player heart rate I approximate the effort being exerted. Heart rate is fed into an algorithm to calculate speed in-game. We test if this allows players of differing fitness levels to compete.";
+
+const SKILL_HEADING = "Skill Balancing";
+const SKILL_CONTENT = "Players lean side to side to turn and avoid obstacles. Familiarity is an advantage and leads to a less exciting challenge. To balance this, I periodically resize obstacles based on player performance. This should be fairer to new players and give experienced players a greater challenge.";
+
+const COG_HEADING = "Cognitive Balancing";
+const COG_CONTENT = "People with less working memory may struggle with the visuals of fast paced gameplay. We tested, with healthy players, reducing the complexity of game textures to see how that will impact performance.";
+
+const FINDINGS_HEADING = 'Findings';
+const FINDINGS_CONTENT = "";
+
     
-    // "To balance fitness levels we measured player heart rate as a indictaor of effort. heart reate, added a mode with Dynamic Difficulty Adjustment to account for player skill "
-
 const useStyles = makeStyles({
     card: {
       maxWidth: 325,
@@ -42,9 +46,7 @@ const useStyles = makeStyles({
     },
 });
 
-
-//TODO: build unified build for all pages
-function CardFactory(imagePath, heading, description){ 
+function HeaderCardFactory(imagePath, heading, description){ 
     const classes = useStyles();
     const image = imagePath !== null ? (<CardMedia 
         className={classes.media}
@@ -68,6 +70,20 @@ function CardFactory(imagePath, heading, description){
     );
 };
 
+function SectionCardFactory(heading, description){ 
+    const classes = useStyles();  
+    return (
+        <Card className={classes.card}>
+            <CardContent className={classes.content}>
+                <Typography gutterBottom variant="h5" component="h5" >{heading}</Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {description}
+                </Typography>
+            </CardContent>
+        </Card>
+    );
+};
+
 function Exergame() {
     useEffect(() => {
         document.title = PAGE_TITLE;  
@@ -76,9 +92,13 @@ function Exergame() {
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise', 'Creating engagement with exercise games.')}
-            {CardFactory(null, BACKGROUND_HEADER, BACKGROUND_CONTENT)}
-            {CardFactory(null, TECH_HEADING, TECH_CONTENT)}
+            {HeaderCardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise', 'Creating engagement with exercise games.')}
+            {SectionCardFactory(BACKGROUND_HEADER, BACKGROUND_CONTENT)}
+            {SectionCardFactory(RESEARCH_HEADING, RESEARCH_CONTENT)}
+            {SectionCardFactory(FITNESS_HEADING, FITNESS_CONTENT)}
+            {SectionCardFactory(SKILL_HEADING, SKILL_CONTENT)}
+            {SectionCardFactory(COG_HEADING, COG_CONTENT)}
+            {SectionCardFactory(FINDINGS_HEADING, FINDINGS_CONTENT)}
         </div>
     );
 }
