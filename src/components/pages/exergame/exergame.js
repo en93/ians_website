@@ -26,7 +26,7 @@ const COG_HEADING = "Cognitive Balancing";
 const COG_CONTENT = "People with less working memory may struggle with the visuals of fast paced gameplay. We tested, with healthy players, reducing the complexity of game textures to see how that will impact performance.";
 
 const FINDINGS_HEADING = 'Findings';
-const FINDINGS_CONTENT = "";
+const FINDINGS_CONTENT = "Throughout this project, I learnt a lot about designing systems, writing clean code and carrying out user studies. Due to limited sample sizes and unreliable hardware, the results were inconclusive. One issue was the exercycle would lose track of heart rate, causing the player to stop until output resumed. Future work could include a larger user study with more resources. This dissertation received a mark of A-.";
 
     
 const useStyles = makeStyles({

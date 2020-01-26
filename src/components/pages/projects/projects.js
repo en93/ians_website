@@ -65,7 +65,7 @@ function ProjectCards(navAction) {
     return (
         <div>
             {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise', 'Creating engagement with exercise games.', './projects/exercise-game')}
-            {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.', './home')}
+            {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.', './projects/personal-website')}
             {CardFactory(require('../../../assets/images/pythonLogo.png'), 'Monty Hall Problem', 'Simulating probability.', './home')}
             {CardFactory(require('../../../assets/images/androidLogo.png'), 'Android NFC Reader', 'Exploring NFC functionality.', './home')} 
         </div>); 
