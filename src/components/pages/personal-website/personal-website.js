@@ -10,6 +10,15 @@ import Typography from '@material-ui/core/Typography';
 const PAGE_TITLE = 'Ian Babington | Personal Website';
 const TITLE = 'Projects';
 
+const MOTIVATION_HEADER = 'Motivation';
+const MOTIVATION_CONTENT = 'My purposes for building this site are threefold. To gain experience building websites from scratch, managing the Software Development Life Cycle and handling operations tasks such as deployments and hosting.';
+
+const TECH_HEADER = 'Technology';
+const TECH_CONTENT = 'I chose to use React to build my frontend. I love the component-based design as well as the great tooling ecosystem surrounding it. Material-UI was chosen for the UI framework. It follows Google’s Material Design guidelines and has many components that look and behave great out of the box.';
+
+const MANAGE_HEADER = 'Project Management';
+const MANAGE_CONTENT = 'Agile methodology is being used to manage this project. Using a Kanban board on Trello and I create and track stories being worked on. I enjoyed analyzing what features would benefit my site as well as crafting written sections where concise and clear communication was required.';
+
 const useStyles = makeStyles({
     card: {
       maxWidth: 325,
@@ -74,6 +83,9 @@ function Exergame() {
         <div className="Page-content">
             <h1>{TITLE}</h1>
             {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.')}
+            {SectionCardFactory(MOTIVATION_HEADER, MOTIVATION_CONTENT)} 
+            {SectionCardFactory(TECH_HEADER, TECH_CONTENT)} 
+            {SectionCardFactory(MANAGE_HEADER, MANAGE_CONTENT)} 
         </div>
     );
 }
