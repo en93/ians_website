@@ -11,13 +11,16 @@ const PAGE_TITLE = 'Ian Babington | Personal Website';
 const TITLE = 'Projects';
 
 const MOTIVATION_HEADER = 'Motivation';
-const MOTIVATION_CONTENT = 'My purposes for building this site are threefold. To gain experience building websites from scratch, managing the Software Development Life Cycle and handling operations tasks such as deployments and hosting.';
+const MOTIVATION_CONTENT = 'I have several motivators for this project. Gaining experience building sites from scratch, managing the Software Development Life Cycle (SDLC) and handling operations tasks such as deployments and hosting.';
 
 const TECH_HEADER = 'Technology';
-const TECH_CONTENT = 'I chose to use React to build my frontend. I love the component-based design as well as the great tooling ecosystem surrounding it. Material-UI was chosen for the UI framework. It follows Google’s Material Design guidelines and has many components that look and behave great out of the box.';
+const TECH_CONTENT = 'I chose to use React to build my frontend. I love the component-based design as well as the great tools available. Material-UI was chosen for the UI framework. It follows Google’s Material Design guidelines and has great out of the box components. Firebase was selected for hosting. I was impressed with its deployment workflow and innovative features';
 
 const MANAGE_HEADER = 'Project Management';
-const MANAGE_CONTENT = 'Agile methodology is being used to manage this project. Using a Kanban board on Trello and I create and track stories being worked on. I enjoyed analyzing what features would benefit my site as well as crafting written sections where concise and clear communication was required.';
+const MANAGE_CONTENT = 'To keep this Agile, I used a Kanban board to create and track stories. I enjoyed looking at the SDLC from a Business Analyst point of view, analyzing what features would be most beneficial.';
+
+const FUTURE_HEADER = "Future";
+const FUTURE_CONTENT = "I have more features on the way as well as updates to my Projects as they progress. This website will be continually improved and supported for many years to come.";
 
 const useStyles = makeStyles({
     card: {
@@ -74,7 +77,7 @@ function SectionCardFactory(heading, description){
     );
 };
 
-function Exergame() {
+function PersonalSite() {
     useEffect(() => {
         document.title = PAGE_TITLE;  
       });
@@ -86,8 +89,9 @@ function Exergame() {
             {SectionCardFactory(MOTIVATION_HEADER, MOTIVATION_CONTENT)} 
             {SectionCardFactory(TECH_HEADER, TECH_CONTENT)} 
             {SectionCardFactory(MANAGE_HEADER, MANAGE_CONTENT)} 
+            {SectionCardFactory(FUTURE_HEADER, FUTURE_CONTENT)} 
         </div>
     );
 }
 
-export default Exergame;
+export default PersonalSite;
