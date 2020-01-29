@@ -5,7 +5,10 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
+import { Button } from "@material-ui/core";
+import { withRouter } from 'react-router';
 
 const PAGE_TITLE = 'Ian Babington | Personal Website';
 const TITLE = 'Projects';
@@ -39,7 +42,7 @@ const useStyles = makeStyles({
     },
 });
 
-function HeaderCardFactory(imagePath, heading, description){ 
+function HeaderCardFactory(imagePath, heading, description, onClick){ 
     const classes = useStyles();
     const image = imagePath !== null ? (<CardMedia 
         className={classes.media}
@@ -59,6 +62,11 @@ function HeaderCardFactory(imagePath, heading, description){
                     </Typography>
                 </CardContent>
             </CardActionArea>
+            <CardActions>
+                <Button size="large" color="primary" onClick={onClick}>
+                    View site Home
+                </Button>
+            </CardActions>
         </Card>
     );
 };
@@ -77,15 +85,18 @@ function SectionCardFactory(heading, description){
     );
 };
 
-function PersonalSite() {
+function PersonalSite(props) {
     useEffect(() => {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/personal-site');
+    const navHome = () => {
+        props.history.push('/home');
+    }
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.')}
+            {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.', navHome)}
             {SectionCardFactory(MOTIVATION_HEADER, MOTIVATION_CONTENT)} 
             {SectionCardFactory(TECH_HEADER, TECH_CONTENT)} 
             {SectionCardFactory(MANAGE_HEADER, MANAGE_CONTENT)} 
@@ -94,4 +105,4 @@ function PersonalSite() {
     );
 }
 
-export default PersonalSite;
+export default withRouter(PersonalSite);

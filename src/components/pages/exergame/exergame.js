@@ -6,6 +6,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { withRouter } from 'react-router';
+// import Dissertation from '../../../assets/documents/Ian_exergame_dissertation.pdf';
+import Button from '@material-ui/core/Button';
+import CardActions from '@material-ui/core/CardActions';
 
 const PAGE_TITLE = 'Ian Babington | Mulitplayer Exercise';
 const TITLE = 'Projects';
@@ -48,12 +52,13 @@ const useStyles = makeStyles({
 
 function HeaderCardFactory(imagePath, heading, description){ 
     const classes = useStyles();
-    const image = imagePath !== null ? (<CardMedia 
-        className={classes.media}
-        image={ imagePath}
-        title="C# logo"
-        alt="C# logo"                    
-    />) : null;
+    const image = imagePath !== null ? (
+        <CardMedia 
+            className={classes.media}
+            image={ imagePath}
+            title="C# logo"
+            alt="C# logo"/>  
+        ) : null;
     
     return (
         <Card className={classes.card}>
@@ -66,6 +71,11 @@ function HeaderCardFactory(imagePath, heading, description){
                     </Typography>
                 </CardContent>
             </CardActionArea>
+            <CardActions>
+            <Button size="large" color="primary" href={process.env.REACT_APP_PUBLIC_URL}>
+                Full Dissertation
+            </Button>
+        </CardActions>
         </Card>
     );
 };
@@ -89,6 +99,7 @@ function Exergame() {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/exergame');
+    // const downloadPDF
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
@@ -103,4 +114,4 @@ function Exergame() {
     );
 }
 
-export default Exergame;
+export default withRouter(Exergame);

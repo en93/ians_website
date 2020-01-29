@@ -13,6 +13,7 @@ import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-155064574-1');
 function App() {
+  console.log(process.env);
   return (
     <div className="App">
       <Layout>

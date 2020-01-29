@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import React, {useEffect} from "react";
 import ReactGA from 'react-ga';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+dotenv.config();
 
 const PAGE_TITLE = 'Ian Babington | Projects';
 const TITLE = 'Projects';
