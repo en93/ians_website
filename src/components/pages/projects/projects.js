@@ -27,10 +27,7 @@ const useStyles = makeStyles({
     },
     content: {
         textAlign: "left",
-        padding: '12px 16px 0px',
-    },
-    button: {
-        padding: '0px',
+        padding: '12px 16px 10px',
     },
   });
 

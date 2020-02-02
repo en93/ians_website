@@ -8,8 +8,9 @@ import PageNotFound from './components/pages/pageNotFound/pageNotFound';
 import Contact from './components/pages/contact/contact';
 import Exergame from './components/pages/exergame/exergame';
 import PersonalSite from './components/pages/personal-website/personal-website';
-import { Route, Switch } from 'react-router-dom'; 
+import { Route, Switch, } from 'react-router-dom'; 
 import ReactGA from 'react-ga';
+// const Dissertation = lazy(() => import('./assets/documents/Ian_exergame_dissertation.pdf'));
 
 ReactGA.initialize('UA-155064574-1');
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/projects"} exact component={Projects} />
           <Route path={"/contact"} exact component={Contact} />
           <Route path={"/projects/exercise-game"} exact component={Exergame} />
+          {/*<Route path={"/projects/exercise-game/dissertation"} exact component={<a href={Dissertation.}/>}/>*/}
           <Route path={"/projects/personal-website"} exact component={PersonalSite} />          
           <Route component={PageNotFound}/>
         </Switch>

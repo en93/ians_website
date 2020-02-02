@@ -38,11 +38,11 @@ const useStyles = makeStyles({
     },
     content: {
         textAlign: "left",
-        padding: '12px 16px 20px',
+        padding: '12px 16px 0px'
     },
 });
 
-function HeaderCardFactory(imagePath, heading, description, onClick){ 
+function HeaderCardFactory(imagePath, heading, description){ 
     const classes = useStyles();
     const image = imagePath !== null ? (<CardMedia 
         className={classes.media}
@@ -63,8 +63,8 @@ function HeaderCardFactory(imagePath, heading, description, onClick){
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="large" color="primary" onClick={onClick}>
-                    View site Home
+                <Button size="large" color="primary" href={"https://github.com/en93/ians_website"}>
+                    View Github
                 </Button>
             </CardActions>
         </Card>
@@ -90,13 +90,10 @@ function PersonalSite(props) {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/personal-site');
-    const navHome = () => {
-        props.history.push('/home');
-    }
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.', navHome)}
+            {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.')}
             {SectionCardFactory(MOTIVATION_HEADER, MOTIVATION_CONTENT)} 
             {SectionCardFactory(TECH_HEADER, TECH_CONTENT)} 
             {SectionCardFactory(MANAGE_HEADER, MANAGE_CONTENT)} 

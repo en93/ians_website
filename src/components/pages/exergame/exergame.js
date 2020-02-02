@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect } from "react";
 import ReactGA from 'react-ga';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -7,9 +7,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { withRouter } from 'react-router';
-// import Dissertation from '../../../assets/documents/Ian_exergame_dissertation.pdf';
 import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
+// const Dissertation = lazy(() => import('../../../assets/documents/Ian_exergame_dissertation.pdf'));
+// import Dissertation from '../../../assets/documents/Ian_exergame_dissertation.pdf';
+
 
 const PAGE_TITLE = 'Ian Babington | Mulitplayer Exercise';
 const TITLE = 'Projects';
@@ -46,7 +48,7 @@ const useStyles = makeStyles({
     },
     content: {
         textAlign: "left",
-        padding: '12px 16px 20px',
+        padding: '12px 16px 10px',
     },
 });
 
@@ -72,7 +74,7 @@ function HeaderCardFactory(imagePath, heading, description){
                 </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="large" color="primary" href={process.env.REACT_APP_PUBLIC_URL}>
+            <Button size="large" color="primary" onClick={() => {}}>
                 Full Dissertation
             </Button>
         </CardActions>
