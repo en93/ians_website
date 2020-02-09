@@ -2,13 +2,14 @@ import React, {useEffect} from "react";
 import ReactGA from 'react-ga';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActions from '@material-ui/core/CardActions';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 import { withRouter } from 'react-router';
+import HeaderCardFactory from '../../UIFactories/HeaderCardFactory';
 
 const PAGE_TITLE = 'Ian Babington | Personal Website';
 const TITLE = 'Projects';
@@ -42,34 +43,34 @@ const useStyles = makeStyles({
     },
 });
 
-function HeaderCardFactory(imagePath, heading, description){ 
-    const classes = useStyles();
-    const image = imagePath !== null ? (<CardMedia 
-        className={classes.media}
-        image={ imagePath}
-        title="C# logo"
-        alt="C# logo"                    
-    />) : null;
+// function HeaderCardFactory2(imagePath, heading, description){ 
+//     const classes = useStyles();
+//     const image = imagePath !== null ? (<CardMedia 
+//         className={classes.media}
+//         image={ imagePath}
+//         title="C# logo"
+//         alt="C# logo"                    
+//     />) : null;
     
-    return (
-        <Card className={classes.card}>
-            <CardActionArea>
-                {image}
-                <CardContent className={classes.content}>
-                    <Typography gutterBottom variant="h5" component="h5" >{heading}</Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {description}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="large" color="primary" href={"https://github.com/en93/ians_website"}>
-                    View Github
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
+//     return (
+//         <Card className={classes.card}>
+//             <CardActionArea>
+//                 {image}
+//                 <CardContent className={classes.content}>
+//                     <Typography gutterBottom variant="h5" component="h5" >{heading}</Typography>
+//                     <Typography variant="body2" color="textSecondary" component="p">
+//                         {description}
+//                     </Typography>
+//                 </CardContent>
+//             </CardActionArea>
+//             <CardActions>
+//                 <Button size="large" color="primary" href={"https://github.com/en93/ians_website"}>
+//                     View Github
+//                 </Button>
+//             </CardActions>
+//         </Card>
+//     );
+// };
 
 function SectionCardFactory(heading, description){ 
     const classes = useStyles();  
@@ -90,10 +91,17 @@ function PersonalSite(props) {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/personal-site');
+
+    const headerCardBuiler = HeaderCardFactory();
+    headerCardBuiler.setImage(require('../../../assets/images/reactLogo.png'));
+    headerCardBuiler.setHeading('IanBabington.com');
+    headerCardBuiler.setDescription('My personal website.');
+    const headerCard = headerCardBuiler.buildCard();
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
-            {HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.')}
+            {/*HeaderCardFactory(require('../../../assets/images/reactLogo.png'), 'IanBabington.com', 'My personal website.')*/}
+            {headerCard}
             {SectionCardFactory(MOTIVATION_HEADER, MOTIVATION_CONTENT)} 
             {SectionCardFactory(TECH_HEADER, TECH_CONTENT)} 
             {SectionCardFactory(MANAGE_HEADER, MANAGE_CONTENT)} 
