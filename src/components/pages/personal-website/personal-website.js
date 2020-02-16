@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 // import { Button } from "@material-ui/core";
 import { withRouter } from 'react-router';
 import HeaderCardFactory from '../../UIFactories/HeaderCardFactory';
+// import ButtonFactory from './../../UIFactories/ButtonFactory';
 
 const PAGE_TITLE = 'Ian Babington | Personal Website';
 const TITLE = 'Projects';
@@ -41,6 +42,7 @@ const useStyles = makeStyles({
         textAlign: "left",
         padding: '12px 16px 0px'
     },
+    button: {},
 });
 
 // function HeaderCardFactory2(imagePath, heading, description){ 
@@ -91,12 +93,23 @@ function PersonalSite(props) {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/personal-site');
+    // const navAction = () =>{
+    //     props.history.push('/home');
+    // };
+    // const buttonFactory = ButtonFactory();
+    // buttonFactory.setMessage = 'View Home';
+    // buttonFactory.setOnClick = () => {/*props.history.push('./home')*/ alert()}
+    // const headerButton = buttonFactory.buildButton();
+    const headerCardBuilder = HeaderCardFactory();
+    headerCardBuilder.setImage(require('../../../assets/images/reactLogo.png'));
+    headerCardBuilder.setHeading('IanBabington.com');
+    headerCardBuilder.setDescription('My personal website.');
+    headerCardBuilder.setButtonText("View on GitHub");
+    // headerCardBuilder.setButtonClick(navAction);
+    headerCardBuilder.setUrl('https://github.com/en93/ians_website')
+    // headerCardBuiler.setButton(headerButton);
+    const headerCard = headerCardBuilder.buildCard();
 
-    const headerCardBuiler = HeaderCardFactory();
-    headerCardBuiler.setImage(require('../../../assets/images/reactLogo.png'));
-    headerCardBuiler.setHeading('IanBabington.com');
-    headerCardBuiler.setDescription('My personal website.');
-    const headerCard = headerCardBuiler.buildCard();
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>

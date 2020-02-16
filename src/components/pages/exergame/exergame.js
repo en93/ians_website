@@ -74,7 +74,7 @@ function HeaderCardFactory(imagePath, heading, description){
                 </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="large" color="primary" onClick={() => {}}>
+            <Button size="large" color="primary" href={"https://drive.google.com/file/d/1UID-LNjDzSIeX1asR8vinadEmjymZGZd/view"}>
                 Full Dissertation
             </Button>
         </CardActions>
@@ -96,12 +96,14 @@ function SectionCardFactory(heading, description){
     );
 };
 
-function Exergame() {
+function Exergame(props) {
     useEffect(() => {
         document.title = PAGE_TITLE;  
       });
     ReactGA.pageview('/exergame');
-    // const downloadPDF
+    // const navAction = () =>{
+    //     props.history.push('./exercise-game/PDF');
+    // };
     return (
         <div className="Page-content">
             <h1>{TITLE}</h1>
