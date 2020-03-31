@@ -29,14 +29,14 @@ const FUTURE_CONTENT = "I have more features on the way as well as updates to my
 
 const useStyles = makeStyles({
     card: {
-      maxWidth: 325,
-      margin: '17px auto',
+      maxWidth: 650,
+      margin: '23px auto', 
     },
     media: {
-      height: 120,
+      height: 160,
       width: '100%',
       backgroundColor: 'black',
-      backgroundSize: 'contain', 
+      backgroundSize: 'contain',
     },
     content: {
         textAlign: "left",

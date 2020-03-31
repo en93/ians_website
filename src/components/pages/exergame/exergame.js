@@ -37,11 +37,11 @@ const FINDINGS_CONTENT = "Throughout this project, I learnt a lot about designin
     
 const useStyles = makeStyles({
     card: {
-      maxWidth: 325,
-      margin: '17px auto',
+      maxWidth: 650,
+      margin: '23px auto',
     },
     media: {
-      height: 120,
+      height: 160,
       width: '100%',
       backgroundColor: 'black',
       backgroundSize: 'contain', 

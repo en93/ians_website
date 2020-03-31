@@ -17,29 +17,31 @@ p {
     margin: 5% 10%;
 }
 
+/* Mobile or rotated monitor */
 @media (orientation: portrait) {
-    body {  
-        background-position-y: 30%;
-    }
     h1{
         font-size: 9vw;        
     }
     h2 {
         font-size: 7vw;
     }
-}
-@media (orientation: landscape){
-    body {  
-        background-position-y: 65%;
+    .Page-content {
+        width: 90vw;
     }
+}
+/* Should work desktop and mobile landscape */
+@media (orientation: landscape){
     h1{
         font-size: 4vw;        
     }
     h2 {
         font-size: 3vw;
     }
+    .Page-content {
+        width: 120vmin;
+        max-width: 780px;
+    }
 }
-
 
 .Full-page-message {
     position: absolute; 
@@ -54,17 +56,22 @@ p {
     width: 100%;
 }
 
-.Page-content {
-    margin-left: auto; 
-    margin-right: auto;    
-    overflow: overlay;
-    height: calc(100vh - 112px);
-    position: relative;
-    width: 90%
-}
+
 
 .navbar {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.Page-content {
+    margin-left: auto; 
+    margin-right: auto;    
+    height: calc(100vh - 112px); 
+    position: relative;
+}
+
+.Card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }

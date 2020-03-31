@@ -15,7 +15,8 @@ const TITLE = 'Projects';
 const useStyles = makeStyles({
     card: {
       maxWidth: 325,
-      margin: '17px auto',
+      width: '100%',
+      margin: '32px auto',
     },
     media: {
       height: 120,
@@ -29,7 +30,7 @@ const useStyles = makeStyles({
     },
   });
 
-
+//In progress: flex box
 
 function ProjectCards(navAction) {  
     const classes = useStyles();
@@ -60,7 +61,7 @@ function ProjectCards(navAction) {
     };
     
     return (
-        <div>
+        <div className="Card-wrapper">
             {CardFactory(require('../../../assets/images/cSharpLogo.png'), 'Multiplayer Exercise', 'Creating engagement with exercise games.', './projects/exercise-game')}
             {CardFactory(require("../../../assets/images/reactLogo.png"), 'IanBabington.com', 'My personal website.', './projects/personal-website')}
             {/*CardFactory(require('../../../assets/images/pythonLogo.png'), 'Monty Hall Problem', 'Simulating probability.', './home')*/}

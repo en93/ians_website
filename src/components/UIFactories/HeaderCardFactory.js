@@ -13,11 +13,11 @@ import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles({
     card: {
-      maxWidth: 325,
-      margin: '17px auto',
+      maxWidth: 650,
+      margin: '23px auto',
     },
     media: {
-      height: 120,
+      height: 160,
       width: '100%',
       backgroundColor: 'black',
       backgroundSize: 'contain', 
