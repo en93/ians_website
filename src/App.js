@@ -8,6 +8,7 @@ import PageNotFound from './components/pages/pageNotFound/pageNotFound';
 import Contact from './components/pages/contact/contact';
 import Exergame from './components/pages/exergame/exergame';
 import PersonalSite from './components/pages/personal-website/personal-website';
+import MontyHall from './components/pages/montyHall/montyHall';
 import { Route, Switch } from 'react-router-dom'; 
 import ReactGA from 'react-ga';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/contact"} exact component={Contact} />
           <Route path={"/projects/exercise-game"} exact component={Exergame} />
           <Route path={"/projects/personal-website"} exact component={PersonalSite} /> 
+          <Route path={"/projects/monty-hall"} exact component={MontyHall} /> 
           <Route path={"/contact"} exact component={Contact} />      
           <Route path={"/"}  component={PageNotFound} />         
         </Switch>
