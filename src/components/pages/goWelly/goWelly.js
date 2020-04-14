@@ -8,16 +8,16 @@ const PAGE_TITLE = 'Ian Babington | Transport App';
 const TITLE = 'Projects';
 
 const MOTIVATION_HEADER = 'Motivation';
-const MOTIVATION_CONTENT = 'Transport is complicated. Official apps and websites overload you with information and messages from crowded UI. This is due to the one size fits all approach, required for large populations with diverse needs and use cases. I’m here to build the app that I want to use every day.';
+const MOTIVATION_CONTENT = 'Transport is complicated. Official apps and websites tend to overload you with information. UI is often crowded, making site navigation tricky. This is due to the one size fits all approach required to support large populations, all with diverse needs and use cases. I’m here to change that. I\'m building the app that I would want to use.';
 
 const PRODUCT_HEADER = 'The product';
-const PRODUCT_CONTENT = 'I’m designing this for people familiar with Wellington, who just need to know when the bus will arrive. From the home screen users will be able to see when services are due within a single tap. I am also exploring daily notifications and updates in the status bar. This is very much for the Wellingtonian on the go.';
+const PRODUCT_CONTENT = 'I’m designing an app for people familiar with Wellington, who just need to know when the bus will arrive. With a single tap users will be able to see when services are arriving in real time. I\'m also exploring daily notifications and updates in the status bar. This is very much for the Wellingtonian on the go.';
 
 const TECH_HEADER = 'Technology';
-const TECH_CONTENT = 'I am building this as a native Android application. I chose this as I am looking to also explore new Java language features. React Native was also a strong contender. I would have gone for this if I was planning a web or iOS version, however web didn’t fit the use case and I require a Mac to develop to iOS.I am also looking at options around NoSQL databases to store user preferences and to store query results for a short time. This is because I want to be able to quickly insert new records and delete old ones. Due to the temporary nature of transit data I’m not worried about requiring relational features for data constraints and locking.';
+const TECH_CONTENT = 'I\'m building this as a native Android application. I chose this as I\'m looking to also explore new Java language features along with refresh my knowledge of the Andriod framework. React Native was also a strong contender. I would have gone for this if I was planning a web or iOS version, however web didn’t fit the use case and I require a Mac to develop to iOS. I\'m also looking at using a Realm NoSQL database to store user preferences and to store query results. Due to the temporary nature of transit data I’m not worried about requiring relational features, data constraints or locking.';
 
 const PROGRESS_HEADER = 'Progress';
-const PROGRESS_CONTENT = 'While I have the use cases ready I’m still working on designing the interface. I have been doing research into UI design and applying learnings here. I’m also working on reverse engineering the API from Wellington Transport as there is no public documentation as of writing.';
+const PROGRESS_CONTENT = 'While I have the use cases ready, I’m currently working on designing the interface. I\'ve been researching UI design and applying learnings to my prototype in Adobe XD. I’m also working on reverse engineering the API from Wellington Transport as there is no public documentation as of writing.';
 
 const makeHeader = () => {
     const headerCardBuilder = HeaderCardFactory();
