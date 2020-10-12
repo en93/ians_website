@@ -2,7 +2,7 @@ import React from "react";
 
 const firstName = "Ian";
 const lastName = " Babington";
-const subtitle = "Full Stack Software Developer";
+const subtitle = "Software Developer";
 
 const logo = props => {
     return (
