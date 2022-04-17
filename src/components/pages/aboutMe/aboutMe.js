@@ -10,27 +10,29 @@ import ReactGA from 'react-ga';
 const PAGE_TITLE = "Ian Babington | About me";
 const HEADLINE = "About me"; 
 
-const BPM_LABEL = 'Developer: BPM Team (MSD)';
+const BPM_LABEL = 'MSD: BPM Team ';
 const BPM_DESC = 'Working with the Business Process Management Team, I was responsible for writing Python Automation Pipelines to deploy builds and perform maintenance on Development and Production environments.';
 
-const JAVA_LABEL = 'Developer: Java Team (MSD)';
+const JAVA_LABEL = 'MSD: Java Team';
 const JAVA_DESC = 'Working with the Java Team I was responsible for developing and maintaining our Java services and automation jobs on a large range of Government projects. I also managed deployments to shared Development Environments which involved chairing meetings and coordinating with many teams across IT.';
 
-const MYMSD_LABEL = 'Developer: MyMSD Team (MSD)';
+const MYMSD_LABEL = 'MSD: MyMSD Team ';
 const MYMSD_DESC = 'Working in the Agile MyMSD Team, I developed mobile first experiences using the Ember.js and Java Spring frameworks to support the MyMSD online service.';
 
-const CA_LABEL = 'Developer: Client Apps (MSD)';
+const CA_LABEL = 'MSD: Client Apps';
 const CA_DESC = 'Working in an Agile team, I develop client facing, React Front-ends and Java Back-end Client Management Systems in support of large government projects.';
 
-const UNI_HONS_LABEL = 'Postgraduate: UoA';
+const UNI_HONS_LABEL = 'UoA: Postgraduate';
 const UNI_HONS_DESC = 'I studied advanced topics in Software Development, including security and UX, and completed original research in the area of multiplayer, exercise video games.';
 
-const UNI_UNDERGRAD_LABEL = 'Undergraduate: UoA';
+const UNI_UNDERGRAD_LABEL = 'UoA: Undergraduate';
 const UNI_UNDERGRAD_DESC = 'I completed a double major BSc, with Information Systems and Computer Science, which taught me core technical and business skills.';
 
-const ACCLAIM_LABEL = 'Internship: Acclaim Software';
+const ACCLAIM_LABEL = 'Acclaim Software: Internship';
 const ACCLAIM_DESC = 'I learnt in the real world about the SDLC, clean code and working in a team environment. I added new features to the core product as well as updating the installer.';
 
+const DATACOM_LABEL = 'Datacom: Application Assurance';
+const DATACOM_DESC = 'Contracting with financial sector clients, I develop backend Java applications. With a Kanban Agile team, we collaborate to solve problems, share knowledge and refine our code and processes.';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -69,6 +71,7 @@ function Bio()  {
     
     return (
         <div>
+            {ExpansionPanelBuilder(DATACOM_LABEL, DATACOM_DESC, "panelDatacom")}
             {ExpansionPanelBuilder(CA_LABEL, CA_DESC, "panelCA")}
             {ExpansionPanelBuilder(MYMSD_LABEL, MYMSD_DESC, "panelMyMSD")}
             {ExpansionPanelBuilder(JAVA_LABEL, JAVA_DESC, "panelJava")}
